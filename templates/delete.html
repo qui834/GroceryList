@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <h2>Delete Item</h2>
+      <div class="py-5 text-center">
+        {% for message in get_flashed_messages() %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+      <div class="row">
+        <div class="col-md-12 order-md-2">
+          <h4 class="mb-4">Are you sure you want to delete <u>{{get['item_name']}}</u>?</h4>
+          <form class="needs-validation" novalidate method="post">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

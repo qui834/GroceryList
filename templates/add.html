@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+<body>
+  <div id="page-wrap">
+    <div class="container">
+          <div class="row">
+            <div class="col-md-10 order-md-8">
+              <h4 class="mb-4">Add entry</h4>
+              <form class="needs-validation" novalidate method="post">
+                <div class="mb-3">
+                  <label for="item_name">Item name</label>
+                  <div class="input-group">
+                    <input type="text" name="item_name" class="form-control" required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                      Your item name is required.
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="amount">Quantity</label>
+                  <input type="text" name="amount" class="form-control" id="amount" required>
+                  <div class="invalid-feedback">
+                    Please enter your amount.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="category">Category</span></label>
+                  <select name="category">
+                    <option>Food</option>
+                    <option>Drinks</option>
+                    <option>Toiletries</option>
+                    <option>Personal Care</option>
+                    <option>Outdoors</option>
+                    <option>Electronics</option>
+                  </select>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

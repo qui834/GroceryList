@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+        <main role="main" class="container">
+            <div class="my-1 p-1 bg-white rounded box-shadow">
+                <h1 class="border-bottom border-gray pb-2 mb-0">Grocery List</h1>
+                {% for item in items %}
+                <div class="media text-muted pt-4">
+                    <div class="media-header pb-3 mb-0 large lh-125">
+                        <strong class="text-gray-dark">Item Name: {{ item['item_name'] }}</strong>
+                    </div>
+                </div>
+                <div class="media text-muted pt-4">
+                    <div class="media-body pb-3 mb-0 medium lh-125 border-bottom border-grey">
+                        <div class="d-flex justify-content-between align-items-center w-150">
+                            <strong class="text-gray-dark">Item ID: {{item['id']}}</strong>
+                            <strong class="text-gray-dark">Quantity: {{ item['amount'] }}</strong>  
+                            <strong class="text-gray-dark">Category: {{item['category']}}</strong>    
+                            <p>
+                            	<a href="{{ url_for('delete', id=item['id']) }}">Delete</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+{% endblock %}
